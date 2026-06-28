@@ -1,0 +1,54 @@
+print("="*20)
+print("Rock Paper Scissors Lizard Spack")
+print("="*20)
+print(""" 
+1) ✊
+2) ✋
+3) ✌️
+4) 🦎
+5) 🖖""")
+player = int(input("Enter your choice (1-5): \t"))
+comp = random.randint(1, 5)
+a = ""
+while a != "Y":
+    if player == 1:
+        print("You chose Rock ✊")
+    elif player == 2:
+        print("You chose Paper ✋")
+    elif player == 3:
+        print("You chose Scissors ✌️")
+    elif player == 4:
+        print("You chose Lizard 🦎")
+    elif player == 5:
+        print("You chose Spock 🖖")
+    else:
+        print("Invalid choice. Please choose a number between 1 and 5.")
+        player = int(input("Enter your choice (1-5): \t"))
+        continue
+
+    if comp == 1:
+        print("Computer chose Rock ✊")
+    elif comp == 2:
+        print("Computer chose Paper ✋")
+    elif comp == 3:
+        print("Computer chose Scissors ✌️")
+    elif comp == 4:
+        print("Computer chose Lizard 🦎")
+    elif comp == 5:
+        print("Computer chose Spock 🖖")
+
+    # Determine the winner
+    if player == comp:
+        print("It's a tie!")
+    elif (player == 1 and (comp == 3 or comp == 4)) :
+        print("You win! Rock crushes Scissors and crushes Lizard.")
+    elif (player == 2 and (comp == 1 or comp == 5)) :
+        print("You win! Paper covers Rock and disproves Spock.")
+    elif (player == 3 and (comp == 2 or comp == 4)) :
+        print("You win! Scissors cuts Paper and decapitates Lizard.")
+    elif (player == 4 and (comp == 2 or comp == 5)) :
+        print("You win! Lizard poisons Spock and eats Paper.")
+    elif (player == 5 and (comp == 1 or comp == 3)) :
+        print("You win! Spock vaporizes Rock and smashes Scissors.")
+    else:
+        print("Computer wins!")
